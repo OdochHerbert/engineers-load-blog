@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 assert = require('assert');
 
-const url = 'mongodb://localhost/passportdb';
+const url= 'mongodb+srv://Hyper:Readefmiller8.@cluster0.etm3zns.mongodb.net/?retryWrites=true&w=majority';
 mongoose.connect(
   url,
   {
