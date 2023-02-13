@@ -1,0 +1,119 @@
+
+
+
+
+<div class="col-xs-12 comment-indent">
+
+ 
+
+
+ 
+
+
+  
+   
+  
+    
+
+  <% comment.comments.forEach(function(post){%>
+    <div>
+  <%if(post.comments.length >0){%>
+  <div id="one">
+    
+    <%- include ('../partials/skip.ejs',{comments:post,postId:sub._id,parentpost,smallId:post.random}) 
+    %> 
+   
+    
+    
+  
+    <div id="<%=post.random+5%>" style="display: none;">
+      <div class="panel-body" style="background: rgb(238, 247, 227);">
+      <a class='in btn btn-danger' id="<%=post.random1+1%>" data-id1="<%=post.random+1%>"  data-id="<%=post.random+5%>" >&times;</a>
+      <%- include ('../partials/comment.ejs',{comment:post,postId:post._id,}) 
+      %> 
+    </div>
+    </div>
+  </div> <%}
+  else{%>
+  <div class="one">
+    <%- include ('../partials/skip.ejs',{comments:post,postId:sub._id,parentpost,smallId:post.random}) 
+    %> 
+  </div>
+  <div id="two">
+    <%- include ('../partials/comment.ejs',{comment:post,postId:post._id}) 
+    %> 
+  </div>
+  <%}%>
+    </div>
+  
+     
+          
+          
+   
+          
+          
+        
+  
+        <% })%> 
+      </div>
+    
+      <script>
+        /*
+        var showAll=document.getElementsByClassName('out')
+        var hideAll=document.getElementsByClassName('in')
+  
+        for(var i= 0; i<showAll.length;i++){
+    showAll[i].addEventListener('click', showOut)
+  
+    
+    function showOut(){
+  
+  var ID=this.getAttribute('data-id')
+  var ID1=this.getAttribute('data-id1')
+  var ID2=this.getAttribute('data-id2')
+  
+  var id=document.getElementById(ID)
+  var show=document.getElementById(ID1)
+  var hide=document.getElementById(ID2)
+  
+  console.log(ID)
+  id.style.display='block'
+  hide.style.display='block'
+  show.style.display='none'
+  
+  }
+  
+  }
+  
+  for(var i= 0; i<hideAll.length;i++){
+    hideAll[i].addEventListener('click', showIn)
+  
+    
+    function showIn(){
+  
+  var ID=this.getAttribute('data-id')
+  var ID1=this.getAttribute('data-id1')
+  var ID2=this.getAttribute('data-id2')
+  
+  var id=document.getElementById(ID)
+  var show=document.getElementById(ID1)
+  var hide=document.getElementById(ID2)
+  
+  console.log('why')
+  id.style.display='none'
+  hide.style.display='none'
+  show.style.display='inline'
+  
+  }
+  
+  }
+  */
+        
+      </script>
+   
+  
+      
+     
+  
+  
+  

@@ -1,0 +1,1 @@
+Create prioprities for showin the register or login error messages

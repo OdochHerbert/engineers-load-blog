@@ -1,0 +1,249 @@
+body{
+    background: #f4f4f4;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+}
+
+/*NAV-BAR*/
+.navbar{
+    min-height:33px !important;
+    margin-bottom:8;
+    border-radius: 0;
+}
+
+.navbar-nav> li > a, .navbar-brand{
+    padding-top:6px !important;
+    padding-bottom:0 !important;
+    height: 33px;
+}
+.navbar-default{
+    background-color: #3ce792 ;
+    border-color:#3ce792 ;
+}
+.navbar-default .navbar-brand{
+    color: #ecf0f1;
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus{
+    color:#ffbbbc;
+}
+.navbar-default .navbar-text{
+    color:#ecf0f1;
+}
+
+.navbar-default .navbar-nav > li> a
+{
+    color:#ecf0f1;
+}
+
+.navbar-default .navbar-nav > li> a:hover,
+.navbar-default .navbar-nav > li> a:focus{
+    color:#ffbbbc;
+}
+
+.navbar-default .navbar-nav > .active>a,
+.navbar-default .navbar-nav > .active> a:hover,
+.navbar-default .navbar-nav > .active> a:focus{
+    color:#ffbbbc;
+    background-color: #c0392b;
+}
+.navbar-default .navbar-nav > .open>a,
+.navbar-default .navbar-nav > .open> a:hover,
+.navbar-default .navbar-nav > .open> a:focus{
+    color:#ffbbbc;
+    background-color: #c0392b;
+}
+
+.navbar-default .navbar-toggle{
+border-color: #c0392b;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+    background-color:#c0392b;
+}
+.navbar-default .navbar-toggle .icon-bar{
+    background-color:#ecf0f1;
+}
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form{
+    border-color: #ecf0f1;
+}
+ .navbar-default .navbar-link{
+     color: #ecf0f1;
+ }
+ .navbar-default .navbar-link:hover{
+    color: #ffbbbc;
+}
+
+/* CUSTOM COLORS FOR MAIN FROM NAV-BAR*/
+.main-color-bg{
+    background-color:#3ce792 !important;
+    border-color: #3ce792 ;
+    color:#ffffff !important; 
+}
+
+/*HEADER*/
+#header{
+    background:#333333;
+    color:#ffffff;
+    padding-bottom:10px;
+    margin-bottom: 15px;
+}
+
+#header .create{
+    padding-top:20px;
+}
+
+/* Breadcrumb*/
+.breadcrumb{
+    background:#cccccc;
+    color:#333333;
+}
+
+.breadcrumb a{
+    columns: #333333;
+}
+
+/*PROGRESS BARS*/
+.progress-bar{
+    background: #333333;
+    color:#ffffff;
+}
+
+.dash-box{
+    text-align:center;
+    text-justify: auto;
+}
+
+#footer{
+    background: #333333;
+    color:#ffffff;
+    text-align: center;
+    padding:30px;
+    margin-top:30px;
+}
+
+#login{
+    margin-top:30px;
+}
+
+#panel-title{
+    text-align: center;
+
+}
+.comment-indent {
+    margin-left: 20px;
+  }
+
+.btn1{
+    background: #3ce792 ;
+    padding:1em 2em;
+    color: #ffffff;
+    border:0;
+    border-radius: 5px;
+    opacity:5px;
+}
+.btn1:hover{
+    background: #333;
+}
+.modal1{
+    /*display:none;*/
+    position:fixed;
+    z-index:1;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    overflow:auto;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-thing{
+    background-color: #f4f4f4;
+    margin-top: 20%;
+    margin-left:28%;
+    margin-right: 10%;
+    padding:20px;
+    width:67%;
+    box-shadow:0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.17)
+}
+
+.closeBtn{
+    color:#ccc;
+    float: right;
+    font-size:30px;
+}
+.closeBtn:hover,.closeBtn:focus{
+    color:#000;
+    text-decoration: none;
+    cursor:pointer;
+}
+a{
+    color: rgb(64, 95, 75);
+}
+a:hover{
+    cursor: pointer;
+    text-decoration: none;
+    color:#3ce792 ;
+}
+.des1{
+    background: dimgray;
+    padding: 2%;
+    border-radius: 7px;
+    margin-top:50px;
+    margin-bottom:100px;
+    margin-left:50px;
+    margin-right:0px;
+}
+.well{
+    background: rgb(104, 231, 193);
+    
+}
+.in{
+    float: right;
+    width:10%;
+    text-align: center;
+}
+.votes{
+    width: 175px;
+    float: right;
+}
+#upVote{
+    float: right;
+    width: 50%;
+    box-sizing: border-box;
+
+}
+#downVote{
+    float: right;
+    width: 50%;
+    box-sizing: border-box;
+
+}
+.clr{
+    clear:both;
+}
+.badge{
+    background-color: #3ce792;
+}
+@media(max-width: 767px){
+    .navbar-default .navbar-nav .open .dropdown-menu > li >a {
+        color: #ecf0f1;
+    }
+    .navbar-default .navbarnav .open .dropdown-menu > li > a:hover,
+    .navbar-default .navbar-nav .open .dropdown-menu >li>a:focus{
+        color:#ffbbbc;
+    }
+
+    .navbar-default .navbarnav .open .dropdown-menu > .active > a,
+    .navbar-default .navbar-nav .open .dropdown-menu >.active >a:hover,
+    .navbar-default .navbarnav .open .dropdown-menu > .active > a:focus{
+        color:#ffbbbc;
+        background-color: #c0392b;
+    }
+}
+
+
+
+
+
+
