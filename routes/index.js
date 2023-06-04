@@ -346,6 +346,10 @@ router.get('/user/notifications',ensureAuthenticated,(req,res)=>{
     console.log(err.message);
   })
 })
+router.get('/site/underprogress',(req,res)=>{
+  console.log('called')
+  res.render('underprogress')
+})
 
 
 

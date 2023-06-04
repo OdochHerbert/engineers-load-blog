@@ -1,84 +1,21 @@
 body{
-    background: #f4f4f4;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background: #f4f4f4 !important;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif' !important;
+    font-size: medium !important;
 
 }
-
-/*NAV-BAR*/
-.navbar{
-    min-height:33px !important;
-    margin-bottom:8;
-    border-radius: 0;
+textarea{
+    resize: vertical;
 }
-
-.navbar-nav> li > a, .navbar-brand{
-    padding-top:6px !important;
-    padding-bottom:0 !important;
-    height: 33px;
-}
-.navbar-default{
-    background-color: #3ce792 ;
-    border-color:#3ce792 ;
-}
-.navbar-default .navbar-brand{
-    color: #ecf0f1;
-}
-.navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:focus{
-    color:#ffbbbc;
-}
-.navbar-default .navbar-text{
-    color:#ecf0f1;
-}
-
-.navbar-default .navbar-nav > li> a
-{
-    color:#ecf0f1;
-}
-
-.navbar-default .navbar-nav > li> a:hover,
-.navbar-default .navbar-nav > li> a:focus{
-    color:#ffbbbc;
-}
-
-.navbar-default .navbar-nav > .active>a,
-.navbar-default .navbar-nav > .active> a:hover,
-.navbar-default .navbar-nav > .active> a:focus{
-    color:#ffbbbc;
-    background-color: #c0392b;
-}
-.navbar-default .navbar-nav > .open>a,
-.navbar-default .navbar-nav > .open> a:hover,
-.navbar-default .navbar-nav > .open> a:focus{
-    color:#ffbbbc;
-    background-color: #c0392b;
-}
-
-.navbar-default .navbar-toggle{
-border-color: #c0392b;
-}
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-    background-color:#c0392b;
-}
-.navbar-default .navbar-toggle .icon-bar{
-    background-color:#ecf0f1;
-}
-.navbar-default .navbar-collapse,
-.navbar-default .navbar-form{
-    border-color: #ecf0f1;
-}
- .navbar-default .navbar-link{
-     color: #ecf0f1;
- }
- .navbar-default .navbar-link:hover{
-    color: #ffbbbc;
+/*Labels*/
+.labels{
+    color: #18bc9c;
 }
 
 /* CUSTOM COLORS FOR MAIN FROM NAV-BAR*/
 .main-color-bg{
-    background-color:#3ce792 !important;
-    border-color: #3ce792 ;
+    background-color:#2c3e50 !important;
+    border-color: #2c3e50 ;
     color:#ffffff !important; 
 }
 
@@ -97,11 +34,8 @@ border-color: #c0392b;
 /* Breadcrumb*/
 .breadcrumb{
     background:#cccccc;
-    color:#333333;
-}
-
-.breadcrumb a{
-    columns: #333333;
+    color:#2c3e50 !important;
+    margin-top: -70px;
 }
 
 /*PROGRESS BARS*/
@@ -113,14 +47,7 @@ border-color: #c0392b;
 .dash-box{
     text-align:center;
     text-justify: auto;
-}
-
-#footer{
-    background: #333333;
-    color:#ffffff;
-    text-align: center;
-    padding:30px;
-    margin-top:30px;
+    width: 100%;
 }
 
 #login{
@@ -136,8 +63,8 @@ border-color: #c0392b;
   }
 
 .btn1{
-    background: #3ce792 ;
-    padding:1em 2em;
+    background: #2c3e50 ;
+    padding:3px;
     color: #ffffff;
     border:0;
     border-radius: 5px;
@@ -148,13 +75,13 @@ border-color: #c0392b;
 }
 .modal1{
     /*display:none;*/
-    position:fixed;
+    position:absolute;
     z-index:1;
-    left:0;
+    /*left:0;
     top:0;
     height:100%;
     width:100%;
-    overflow:auto;
+    overflow:auto;*/
     background-color: rgba(0,0,0,0.5);
 }
 .modal-thing{
@@ -183,20 +110,43 @@ a{
 a:hover{
     cursor: pointer;
     text-decoration: none;
-    color:#3ce792 ;
+    color:#2c3e50 ;
 }
 .des1{
-    background: dimgray;
-    padding: 2%;
-    border-radius: 7px;
+    background: #2c3e50;
+    padding: 5px;
+    border-radius: 5px;
     margin-top:50px;
     margin-bottom:100px;
     margin-left:50px;
     margin-right:0px;
+    width: 100%;
 }
 .well{
-    background: rgb(104, 231, 193);
-    
+    background: #18bc9c;
+    height: 150px !important;
+    width: 100% !important;
+}
+@media screen and (max-width: 767px) {
+    .well{
+        width:auto !important;
+    }
+    body{
+       font-size: small !important;
+    }
+}
+@media screen and (min-width: 767px) and (max-width: 992px) {
+        .show {
+            display: none !important;
+        }
+        .breadcrumb{
+            margin-top: 70px;
+            margin-bottom: 0px;
+        }
+        .well{
+            box-sizing: border-box !important;
+            width: 480px !important;
+        }
 }
 .in{
     float: right;
@@ -223,27 +173,65 @@ a:hover{
     clear:both;
 }
 .badge{
-    background-color: #3ce792;
+    background-color: #2c3e50;
 }
-@media(max-width: 767px){
-    .navbar-default .navbar-nav .open .dropdown-menu > li >a {
-        color: #ecf0f1;
-    }
-    .navbar-default .navbarnav .open .dropdown-menu > li > a:hover,
-    .navbar-default .navbar-nav .open .dropdown-menu >li>a:focus{
-        color:#ffbbbc;
-    }
-
-    .navbar-default .navbarnav .open .dropdown-menu > .active > a,
-    .navbar-default .navbar-nav .open .dropdown-menu >.active >a:hover,
-    .navbar-default .navbarnav .open .dropdown-menu > .active > a:focus{
-        color:#ffbbbc;
-        background-color: #c0392b;
-    }
+.showHideBtn{
+    display: none !important;
 }
-
-
-
+.weller{
+    background-color: #18bc9c;
+    margin: 5px;
+    padding: 5px;
+}
+@media screen and (max-width: 767px) {
+    .showHideBtn{
+        display: block !important;
+        color: white !important;
+    }
+    .showHide{
+        display: none !important;
+    }
+    
+}
+ /*ModalBtn from W3Schools*/
+ /* The Modal (background) */
+.modal2 {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
 
 
 

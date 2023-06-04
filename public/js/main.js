@@ -1,4 +1,7 @@
 $(document).ready(function() {
+  $('#myModal').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })
 
   $('.modalBtn').on('click',function(){
     let ID = $(this).data('id')
@@ -7,9 +10,6 @@ $(document).ready(function() {
     $('#'+ID).show()
      
 })
-
-
-
 
 $('.closeBtn').on('click',function(){
   let ID = $(this).data('id')
@@ -65,6 +65,7 @@ $('.btn1').on('click',function(){
       console.log(parent)
       console.log(divId)
       console.log(commentId)
+      console.log('ITS ME')
         $.ajax({
             url: '/posts/'+postId+'/comments/'+commentId+'/replies',
             dataType: 'text',
@@ -88,7 +89,7 @@ $('.btn1').on('click',function(){
             
 
                 $('.modal1').hide()
-                //$('.'+fatherId).show()
+console.log('done')
                
                 $('#'+showId).show()
                 $('#'+smallId).show()
@@ -192,7 +193,7 @@ $('.btn1').on('click',function(){
    function processForm4( e ){
     const Id = $(this).data('id0');
     console.log(Id)
-   
+    console.log('ITS ME')
       $.ajax({
           url: '/posts/'+Id+'/notify',
           dataType: 'text',
@@ -220,6 +221,7 @@ $('.btn1').on('click',function(){
     
     const notIds = $(this).data('id');
     const user = $(this).data('id2');
+    console.log('ITS ME')
     
    
       $.ajax({
@@ -249,8 +251,9 @@ $('.btn1').on('click',function(){
   function processForm6( e ){
     
     const commentId= $(this).data('id0');
-    const authorId= $(this).data('id1');zz
+    const authorId= $(this).data('id1');
     console.log(authorId)
+    console.log('ITS ME')
     
     
    

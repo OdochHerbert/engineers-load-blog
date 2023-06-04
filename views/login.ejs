@@ -6,23 +6,23 @@
     <div class="col-md-4">
         <div class="well">
         <div class="card card-body">
-            <h1 class="text-center mb-3"><span class="glyphicon glyphicon-log-in"></i></h1>
+            <h1 class="text-center mb-3 labels"><span class="glyphicon glyphicon-log-in"></i></h1>
             <%- include ('./partials/messages') %>
           <form action="/users/login" method="POST"> 
         <div class="form-group">
-            <label for="email"> Enter Email</label>
+            <label for="email" class="labels"> Enter Email</label>
             <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email"  value="<%= typeof email != 'undefined' ? email:''%>">
         </div>
 
         <div class="form-group">
-            <label for="name"> Enter Password</label>
+            <label for="name" class="labels"> Enter Password</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Create Password" value="">
 
         </div>
 
         <input type="submit" class="btn btn-primary btn-block mb-2" placeholder="Login">
         </form>
-        <p>No Account?<a href="/users/register">Register</a></p>
+        <p class="labels">No Account?<a href="/users/register">Register</a></p>
         </div>
     </div>
 </div>

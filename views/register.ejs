@@ -6,33 +6,33 @@
     <div class="col-md-6 ">
         <div class="well">
         <div class="card card-body">
-            <h1 class="text-center mb-3"><span class="glyphicon glyphicon-user"></i></h1>
+            <h1 class="text-center mb-3"><span class="glyphicon glyphicon-user labels"></i></h1>
             <%- include ('./partials/messages') %>
             <form action="/users/register" method="POST">
             <div class="form-group">
-                <label for="name">Name</label>
+                <label for="name" class="labels">Name</label>
                 <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name" value="<%= typeof name != 'undefined' ? name:''%>">
 
             </div>
         <div class="form-group">
-            <label for="email">Email</label>
+            <label for="email" class="labels">Email</label>
             <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email"  value="<%= typeof email != 'undefined' ? email:''%>">
         </div>
 
         <div class="form-group">
-            <label for="name">Password</label>
+            <label for="name" class="labels">Password</label>
             <input type="password" id="password" name="password" class="form-control" placeholder="Create Password" value="<%= typeof password != 'undefined' ? password:''%>">
 
         </div>
 
         <div class="form-group">
-            <label for="name">Confrim Password</label>
+            <label for="name" class="labels">Confirm Password</label>
             <input type="password" id="password1" name="password1" class="form-control" placeholder="Confirm Password" value="<%= typeof password1 != 'undefined' ? password1:''%>">
 
         </div>
         <input type="submit" class="btn btn-primary btn-block mb-2" placeholder="Login">
         </form>
-        <p>Have an Account?<a href="/users/login">Login</a></p>
+        <p class="labels">Have an Account?<a href="/users/login">Login</a></p>
         </div>
     </div>
 </div>

@@ -1,391 +1,390 @@
-<header id="header">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-10">
-              <h1><img src="/images/<%=user.img%>" height="40px" width="60px"> Dashboard</h1>
-          </div>
-          <div class="col-md-2">
-              <div class="col-md-2">
-                  <div class="dropdown create">
-                      <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                          Create content
-                          <span class="caret"></span>
-                      </button>
-                      <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                          <li><a  type="button" class="modalBtn" data-id="<%=sub._id+10%>" data-id1='<%=sub._id+1%>'>Add Page</a></li>
-                          <li><a type="button" class="modalBtn" data-id="<%=sub._id+11%>" data-id1='<%=sub._id+1%>'>Add Selfie</a></li>
-                          
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-</header>
-
-
+<!--BREADCRUMBS-->
 <section id="breadcrumb">
-  <div class="container">
-      <ol class="breadcrumb">
-          <li class="active">DashBoard</li>
-      </ol>
-  </div>
-</section>
-
-<section id="main">
-  <div class="container">
-      <div class="row">
-          <div class="col-md-3">
-              <div class="list-group">
-                  <a href="/dashboard" style="background:'/images/<%=user.img%>' ;" class="list-group-item  main-color-bg">
-                        <img src="/images/<%=user.img%>" height="40px" width="60px">
-                      <h4>
-                          <%=name%>
-                      </h4>
-                  </a>
-                  <a href="/users/posts/<%=user._id%>" class="list-group-item"><span class="glyphicon glyphicon-list-pencil" aria-hidden="true"></span> 
-                          <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Your Posts
-                              <%
+    <div class="container">
+        <ol class="breadcrumb">
+            <li class="active">
+                <%=sub.title%> By <%=sub.author.name%></li>
+        </ol>
+    </div>
+    <!--SECTION-->
+    <section id="main">
+        <div class="container">
+            <button id="btnID" onclick="responsiveDisplay()" class="btn-primary card showHideBtn"> View Profile</button>
+            <div class="row">
+                <div id="divID" class="col-md-3 showHide" data-id="hide">
+                    <div class="list-group">
+                        <a href="/dashboard" style="background:'/images/<%=user.img%>' ;" class="list-group-item  main-color-bg">
+                            <img src="/images/<%=user.img%>" height="40px" width="60px">
+                                <h4>
+                                    <%=name%>
+                                </h4>
+                            </a>
+                            <a href="/users/posts/<%=user._id%>" class="list-group-item">
+                                <span class="glyphicon glyphicon-list-pencil" aria-hidden="true"></span>
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                                Your Posts
+                                <%
                               if(typeof sub !='undefined'){
                                   var srNo=0
                                   user.posts.forEach(function(post){ 
                                       srNo=srNo+1
-                                      %>
-                                 <% }) %>
-                                 <span class="badge"><%=srNo%></span>
-                             <% } 
+                                      %><% }) %>
+                                <span class="badge"><%=srNo%></span>
+                            <% } 
                               else{ %>
-                                  <tr><td colspan="3">No Data</td></tr>
-                          
-                          <% } %>
-                              
- 
+                                <tr>
+                                    <td colspan="3">No Data</td>
+                                </tr>
+
+                            <% } %>
 
 
+                        </span>
 
 
-
-                          </span>
-                          
-                      
-                      
-                      </a>
-                  <a href="posts.html" class="list-group-item"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Ranking<span class="badge">
-                      <%
+                    </a>
+                    <a href="/site/underprogress" class="list-group-item">
+                        <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                        Ranking<span class="badge">
+                            <%
                       if(typeof all !='undefined'  && all.length>0){
                           let srNo=0
                           all.forEach(function(post){ %>
-    <span>
+                                <span>
 
-<% if(post.author.name==name){
-  srNo=srNo+post.voteScore %>
-<%}%>
-
+                                    <% if(post.author.name==name){
+  srNo=srNo+post.voteScore %><%}%>
 
 
+                                </span>
 
-
-
-    </span>
-
-                              <%
+                                <%
 
                               
                       
                               %>
 
-                         <% }) %>
-                         <span class="badge"><%=srNo%></span>
-                         
-                     <% } 
+                            <% }) %>
+                            <span class="badge"><%=srNo%></span>
+
+                        <% } 
                       else{ %>
-                          <tr><td colspan="3">No Data</td></tr>
-                  
-                  <% } %>
-                      
-                      
-                      
-                      
-                      
-                      </span></a>
-                  <a href="users.html" class="list-group-item"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Projects <span class="badge">304</span></a>
-              </div>
+                            <tr>
+                                <td colspan="3">No Data</td>
+                            </tr>
 
-              <div class="well">
-                  <h4> Disk Spaced Used </h4>
-                  <div class="progress">
-                   <div class="progress-bar" role='progressbar' aria-valuenow="60" araia-valuemin="0" aria-valuemax="100" style="width: 60%">
-                  60%</div>
-                  </div>
-              <h4> Bandwidth Used </h4>
-                  <div class="progress">
-                   <div class="progress-bar" role='progressbar' aria-valuenow="40" araia-valuemin="0" aria-valuemax="100" style="width: 40%">
-                  40%</div>
-                  </div>
-              </div>
-          </div>
-          <div class="col-md-9">
-              <div class="panel panel-default">
-                  <div class="panel-heading main-color-bg">
-                      <h3 class='panel-title' id="panel-title"> <%=sub.title%></h3>
-                  </div>
-                  <div class="panel-body">
-                    
-                    <div class="well">
-                      <%=sub.content%>
-                      <%=sub.body%>
-                      
-                   
-                    
-                    <p>By <%=sub.author.name%></p>
-                    <p><strong>Rating</strong> <%=Math.round(sub.rank)%>% from <a type="button" class="voters" data-id="<%=sub.random+20%>"><%=sub.usersVoted.length%> Engineers</a></p>
-                    <a type="button" class="modalBtn" data-id="<%=sub._id+12%>" data-id1='<%=sub._id+1%>'>Leave a comment</a>
-                  </div>
-                  <div id="<%=sub.random+20%>" style="display: none;">
+                        <% } %>
 
 
-                    <% sub.usersVoted.forEach(function(voters){%>
-                      <table  class="table table-striped table-hover">
-                        <tr>
-                          <td><%=voters.name%></td>
-                        </tr>
-                      </table>
+                    </span>
+                </a>
+                <a href="/site/underpogress" class="list-group-item">
+                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                    Projects
+                    <span class="badge">304</span>
+                </a>
+            </div>
 
-                   <% })%>
-
-                  </div>
-                <form action="/posts/<%=sub._id%>/vote"method="post">
-                  <div class="form-group">
-                    <input name="vote" type="number" id="rating-control" class="form-control" step="0.1" max="5" placeholder="Rate 1-5" >
-                    <input type="submit" placeholder="Vote" class="btn btn-primary">
+            <div class="">
+                <h4>
+                    Engineer-Rank
+                </h4>
+                <div class="progress">
+                    <div class="progress-bar" role='progressbar' aria-valuenow="60" araia-valuemin="0" aria-valuemax="100" style="width: 60%">
+                        60%</div>
                 </div>
-                </form>
-
-
-     <% sub.comments.forEach(function(post){%>
-      
-      <div class="click">
-          <p><img src="/images/<%=post.author.img%>"class="img-circle" width="50px" height="50px"><%=post.content%>
-          
-            <a type="button" class="modalBtn" data-id="<%=post.random%>" data-id1='<%=post._id+1%>'>Reply</a>
-            <a type="button" class="btn1" data-id="<%=post.random%>" data-id1='<%=post._id+1%>'>Show Reply Tree</a>
-
-           
-            
-            
-
-            
-              
-              <div class="hider" style="display: none;" id="<%=post._id+1%>">
-               
-              <%- include ('./partials/comment',{comment:post,postId:sub._id,parentpost:post._id}) 
-              %> 
-                
-          </div>
-          
-          
-          
-          <div class="modal1" style="display:none" id="<%=post.random%>">
-           
-             <div class="modal-thing">
-               <span class="closeBtn" data-id="<%=post.random%>">&times;</span>
-               <p>reply to <%=post.content%></p>
-          
-            <form name="form" class='form'data-id="<%=sub._id%>" data-id1="<%=post._id%>" data-id2="<%=post._id+1%>"  data-id4="<%=post.random1+1%>" data-id5="<%=post.random+5%>">
-
-              <div class="form-group">
-                <textarea id='content' name="content" class="form-control" id="reply-content" placeholder="reply"></textarea>
-              </div>
-        
-              <div class='text-right'>
-                <button type="submit"  >Reply</button>
-              </div>
-
-
-            </form>
-         
+                <h4>
+                    Acceptance %S
+                </h4>
+                <div class="progress">
+                    <div class="progress-bar" role='progressbar' aria-valuenow="40" araia-valuemin="0" aria-valuemax="100" style="width: 40%">
+                        40%</div>
+                </div>
+            </div>
         </div>
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading main-color-bg">
+                    <h3 class='panel-title' id="panel-title">
+                        <%=sub.title%></h3>
+                </div>
+                <div class="panel-body">
+   
+                    <div class="weller">
+                        
+                        <%=sub.content%>
+                        <div id="inner" data-id10="<%=sub.body%>" >
+
+                        </div>
+                        <p>By
+                            <%=sub.author.name%></p>
+                        <p>
+                            <strong>Rating</strong>
+                            <%=Math.round(sub.rank)%>% from
+                            <a style="color: #2c3e50" type="button" class="voters" data-id="<%=sub.random+20%>"><%=sub.usersVoted.length%>
+                                Engineers</a>
+                        </p>
+                        <a style="color: #2c3e50" type="button" class="modalBtn" data-id="<%=sub._id+12%>" data-id1='<%=sub._id+1%>'>Leave a comment</a>
+                    </div>
+                    <div id="<%=sub.random+20%>" style="display: none;">
+
+
+                        <% sub.usersVoted.forEach(function(voters){%>
+                            <table class="table table-striped table-hover">
+                                <tr>
+                                    <td><%=voters.name%></td>
+                                </tr>
+                            </table>
+
+                        <% })%>
+
+                    </div>
+                    <form action="/posts/<%=sub._id%>/vote" method="post">
+                        <div class="form-group">
+                            <input name="vote" type="number" id="rating-control" class="form-control" step="0.1" max="5" placeholder="Rate 1-5">
+                                <input type="submit" placeholder="Vote" class="btn btn-primary"></div>
+                            </form>
+
+
+                            <% sub.comments.forEach(function(post){%>
+
+                                <div class="click">
+                                    <p>
+                                        <div style="color: #2c3e50">
+                                            <img src="/images/<%=post.author.img%>" class="img-circle" width="50px" height="50px">
+                                            <div id="counter" class="inner1" data-id20="<%=post.content%>" data-idNo="<%=sub.comments.length%>" style="word-break:break-all"></div>
+                                        
+                                        <a  type="button" class="myBtn" data-id="<%=post.random%>" data-id1='<%=post._id+1%>'>Leave Reply</a>
+
+                                        </div>
+                                        
+                                      
+
+                                            
+                                            <a type="button" class="btn1 badge" data-id="<%=post.random%>" data-id1='<%=post._id+1%>'>Replies</a>
+
+
+                                            <div class="hider" style="display: none;" id="<%=post._id+1%>">
+
+                                                <%- include ('./partials/comment',{comment:post,postId:sub._id,parentpost:post._id}) 
+              %>
+
+                                            </div>
+
+
+                                            <div class="modal2 modal1" style="display:none" id="<%=post.random%>">
+
+                                                <div class="modal-content">
+                                                    <span class="close" data-id="<%=post.random%>">&times;</span>
+                                                    <p style="color: black; word-break: break-all;">reply to the one
+                                                        <%=post.content%></p>
+
+                                                <form name="form" onsubmit="submitFunc()" class='form' data-id="<%=sub._id%>" data-id1="<%=post._id%>" data-id2="<%=post._id+1%>" data-id4="<%=post.random1+1%>" data-id5="<%=post.random+5%>">
+
+                                                        <div class="form-group">
+                                                            <textarea style="resize: vertical;" id='content' class="form-control ckdone2" name="content" id="reply-content" placeholder="reply"></textarea>
+                                                        </div>
+
+                                                        <div class='text-right'>
+                                                            <button type="submit"> Close Reply</button>
+                                                        </div>
+
+
+                                                    </form>
+
+                                                </div>
+                                            </div>
+
+                                        </p>
+
+                                    </div>
+
+                                <% })%>
+
+
+                            </div>
+                        </div>
+
+                        <!--#ifcurrentUser-->
+
+
+                        <!--{{else}}
+                        <h1>SIGN IN TO COMMENT //// DESIGN THOS</h1>
+                        {{/if}}-->
+
+
+                    </div>
+                </div>
+
+            </div>
+
+
         </div>
-          
-          </p>
-          
-      </div>
-
-    <% })%>
-                
- 
-                  </div>
-              </div>
-              
-              <!--#if currentUser-->
-  
-
-  <!--{{else}}
-<h1>SIGN IN TO COMMENT //// DESIGN THOS</h1>
-{{/if}}-->
-
-         
-
-         
-              
-
-             
 
 
-
-      </div>
-  </div>
-
-          </div>
-  
-          
-          
-          </div>
-          
-     
-</section>
-<!--COMMENT MODAL-->
+    </section>
 
 
-<div class="modal1" style="display:none" id="<%=sub._id+12%>">
-           
-  <div class="modal-thing">
-    <span class="closeBtn" data-id="<%=sub._id+12%>">&times;</span>
-    <p>reply to <%=sub.content%></p>
-
-    <form class="cantos"action="/posts/<%=sub._id%>/comments" data-id0="<%=sub._id%>" method="post">
-
-   <div class="form-group">
-     <textarea id='content' name="content" class="form-control" id="reply-content" placeholder="Leave a comment"></textarea>
-   </div>
-
-   <div class='text-right'>
-     <button type="submit">Submit</button>
-   </div>
+    <!--COMMENT MODAL-->
 
 
- </form>
-
-</div>
-</div>
-  <!-- Modal -->
-  <div class="modal1" style="display:none" id="<%=sub._id+10%>">
-           
-    <div class="modal-thing">
-      <span class="closeBtn" data-id="<%=sub._id+10%>">&times;</span>
-      
- 
-  <form action='/posts/new' method='POST'>
-         
-           
-    <h4 >Add Page</h4>
-          
-        
-            
-               <div class="form-group">
-                   <label>Post Title</label>
-                   <input type="text" class="form-control" placeholder="Page Title" name='title'>
-               </div>
-               <div class="form-group">
-                  <label>Post Body</label>
-                  <textarea name="body" class="form-control" placeholder="Page Body" ></textarea>
-              </div>
-
-              <div class="form-group">
-                  <label>Post Reference</label>
-                  <input type="text" class="form-control" placeholder="Add Some Tags" name='url'>
-              </div>
-
-              <!--WITH TIME TO TURN INTO DROPDOWN FORR ALL DEPARTMENTS-->
-              <div class="form-group">
-                  <label>DEPARTMENT</label>
-                  <select name='subreddit' value="subreddit">
-                      <option name='subreddit' value='ELECTRICAL AND ELECTRONICS'>ELECTRICAL AND ELECTRONICS</option>
-                      <option name='subreddit' value='MECHANICAL ENGINEERING'>MECHANICAL ENGINEERING</option>
-                      <option name='subreddit' value='COMPUTER ENGINEERING'>COMPUTER ENGINEERING</option>
-                      <option name='subreddit' value='WEB DEVELOPMENT'>WEB DEVELOPMENT</option>
-                  
-                  </select>
-
-
-
-                  
-              
-  
-          </div>
-          <button type="submit" class="btn btn-primary">Save</button>
-          
-  </form>
-  
-        </div>
-      </div>
     
-
-  <!-- PROFILE PHOTO MODAL 2-->
-  <div class="modal1" style="display:none" id="<%=sub._id+11%>">
-           
-    <div class="modal-thing">
-      <span class="closeBtn" data-id="<%=sub._id+11%>">&times;</span>
-      
-      
- 
-  <form action='/users/pic' method='POST' enctype='multipart/form-data'>
-          
-            <h4>Change Profile Photo</h4>
-          
-         
-            
-              <div class="form-group">
-                  <label for="image">Upload photo</label>
-                  <input type="file" class="form-control" placeholder="Add Some Tags" name='image' id="name">
+        
+        <div class="modal modal2" tabindex="-1" role="dialog" id="<%=sub._id+12%>">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-body">
+                    <span class="closeBtn" data-id="<%=sub._id+12%>">&times;</span>
+                    <p style="color: black; word-break: break-all;">reply to <%=sub.author.name%>
+                        <%=sub.content%></p>
+                    <form class="cantos" action="/posts/<%=sub._id%>/comments" data-id0="<%=sub._id%>" method="post">
+        
+                        <div class="form-group">
+                            <textarea name="content" class="form-control" id="reply-content" placeholder="Leave a comment">
+                            </textarea>
+                        </div>
+                        <div class='text-right'>
+                            <button type="submit">Submit</button>
+                        </div>
+                    </form>
+        
+                </div>
               </div>
-  
-          
-          
-            
-            <button type="submit" class="btn btn-primary">Save changes</button>
-         
-  </form>
-  
-       
-      </div>
-    </div>
+            </div>
+          </div>
 
-    <script>
-      var buttonOne=document.getElementsByClassName('voters')
-  
-  
-  
-  
-  
-  for(var i= 0; i<buttonOne.length;i++){
-    buttonOne[i].addEventListener('click', openVoters)
-  }
-  
-  
-  
-  function openVoters(){
-  var ID=this.getAttribute('data-id')
-  
-  var id=document.getElementById(ID)
-  
-  console.log(ID)
-  
-  
-  
-  if(id.style.display==='none'){
-    id.style.display='block'
-  }
-  else{
-    id.style.display='none'
-  }
+                <script>
+                    var buttonOne = document.getElementsByClassName('voters')
+
+
+                    for (var i = 0; i < buttonOne.length; i++) {
+                        buttonOne[i].addEventListener('click', openVoters)
+                    }
+
+
+                    function openVoters() {
+                        var ID = this.getAttribute('data-id')
+
+                        var id = document.getElementById(ID)
+
+                        console.log(ID)
+
+
+                        if (id.style.display === 'none') {
+                            id.style.display = 'block'
+                        } else {
+                            id.style.display = 'none'
+                        }
+                    }
+                </script>
+                <script>
+                    var divElement=document.getElementById('inner')
+                    var id10 = divElement.getAttribute('data-id10')
+                  
+                    divElement.innerHTML= id10
+                    var divElement1Id=document.getElementById('counter')
+                    var count = divElement1Id.getAttribute('data-idNo')
+                    var divElement1=document.getElementsByClassName('inner1')
+                    for(i=0 ;i<count; i++){
+                    var id20 = divElement1[i].getAttribute('data-id20')
+                   
+                   divElement1[i].innerHTML= id20
+
+                    }
+                   
+
+                </script>
+                <script>
+                    var showButton= document.getElementById('btnID')
+                    var showHide=document.getElementById('divID')
+                    var id =showHide.getAttribute('data-id')
+                    function responsiveDisplay(){
+                       
+                        if(id =='hide'){
+                            showHide.className= 'col-md-3'
+                            showHide.setAttribute('data-id', 'block')
+                            id= showHide.getAttribute('data-id')
+                            showButton.innerHTML='Close Profile'
+                        }
+                        else{
+                            showHide.className='col-md-3 showHide'
+                            showHide.setAttribute('data-id', 'hide')
+                            id= showHide.getAttribute('data-id')
+                            showButton.innerHTML='View Profile'
+                        }
+                        
+                    }
+                    function submitFunc(){
+                        var form = getElementsByClassName('form')
+                        console.log(form[1])
+                    }
+                    function myFunction() {
+                        var panel1 = document.getElementById("panel1")
+                        var panel2 = document.getElementById("panel2")
+                        var panelParent1 = document.getElementById("panelParent")
+                        var panelParent2 = document.getElementById("panelParent2")
+                    
+                    
+                        // var para=document.createElement("p")
+                        // var parent=document.getElementById('parent')
+                        // parent.replaceChild(form,button)
+                        // var panel1=document.getElementById("panel1")
+                        // subm.type='submit'
+                        // form.appendChild(textBox)
+                    
+                        // CREATING ELEMENTS FOR NEW PANEL BODY
+                        var div1 = document.createElement('div')
+                        div1.class = 'panel-body'
+                        div1.innerHTML = sub
+                        panelParent2.remove()
+                        panelParent.replaceChild(div1, panel1)
+                    
+                    
+                    }
+                    </script>
+                
+                <script src="/ckeditorbasic/ckeditor.js"></script>
+                <script>
+                     //CKEDITOR.replace('content1')
+                </script>
+                <script>
+
+                    // Get the modal
+var modal = document.getElementsByClassName("modal2");
+console.log(modal)
+// Get the button that opens the modal
+var btn = document.getElementsByClassName('myBtn');
+console.log(btn)
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close");
+console.log(span)
+
+// When the user clicks on the button, open the modal
+for(let i = 0; i<btn.length ;i++){
+    btn[i].onclick = function() {
+        console.log(i)
+  modal[i].style.display = "block";
+}
+}
+// When the user clicks on <span> (x), close the modal
+for(let j = 0;j<span.length;j++){
+    span[j].onclick = function() {
+        console.log(j)
+     modal[j].style.display = "none";
+}
+
+}
+
+// When the user clicks anywhere outside of the modal, close it
+
+window.onclick = function(event) {
+    for(let k = 0;k<modal.length;k++){
+        if (event.target == modal[k]) {
+    modal[k].style.display = "none";
+  } 
 }
   
-      </script>
-  
-
-    
-
-   
-    
-    
+}
+             </script>
+               
