@@ -22,6 +22,9 @@ const Populate = require('../util/autopopulate');
         type: String
 
     },
+    noimg:{
+        type: String
+    },
   posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Posts' }],
   comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment' }],
   subreddits:[{type:String}],
@@ -29,9 +32,6 @@ const Populate = require('../util/autopopulate');
   notIds:[{type: mongoose.Schema.Types.ObjectId, ref: 'Posts'}]
  
 }, { timestamps: true });
-
-
-
 
 
 
